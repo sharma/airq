@@ -6,7 +6,7 @@ function main() {
     console.log('No location provided.')
   }
 
-  var locate = 'https://www.mapquestapi.com/geocoding/v1/address?key=KlV3D6Vwk5vzqwAmGp2ZKjdCeYK4BNGe&location='
+  var locate = 'https://www.mapquestapi.com/geocoding/v1/address?key=YOUR_KEY&location='
 
   // Appends args with spaces into the URL
   for (let j = 2; j < process.argv.length; j++) {
@@ -28,7 +28,7 @@ function geocode(locate) {
 }
 
 function aqius(lat, long) {
-  var geocode = 'https://api.airvisual.com/v2/nearest_city?lat=' + lat + '&lon=' + long + '&key=iEjc5mYrzP4qLpdws'
+  var geocode = 'https://api.airvisual.com/v2/nearest_city?lat=' + lat + '&lon=' + long + '&key=YOUR_KEY'
   axios.get(geocode)
     .then(function(response) {
       console.log('Air quality index (AQIUS): ' + response.data.data.current.pollution.aqius)
