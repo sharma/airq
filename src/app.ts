@@ -17,6 +17,7 @@ function main() {
   geocode(locate)
 }
 
+// Converts address/postcode to GPS coordinates
 function geocode(locate) {
   axios.get(locate)
     .then(function (response) {
@@ -27,6 +28,7 @@ function geocode(locate) {
   })
 }
 
+// Retrieves AQIUS from GPS coordinates
 function aqius(lat, long) {
   var geocode = 'https://api.airvisual.com/v2/nearest_city?lat=' + lat + '&lon=' + long + '&key=YOUR_KEY'
   axios.get(geocode)
